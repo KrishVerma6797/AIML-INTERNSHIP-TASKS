@@ -24,8 +24,8 @@ cat_col=df.select_dtypes(include='object').columns
 print(cat_col)
 df = pd.get_dummies(df, columns=cat_col, drop_first=True)
 
-ss=StanderScaler
-nums=df['Age','Fare']
+ss=StandardScaler()
+nums=['Age','Fare']
 df[nums]=ss.fit_transform(df[nums])
 
 plt.figure(figsize=(12,12))
